@@ -8,6 +8,11 @@
 🎬 **Demo Video:** [Watch on Google Drive](https://drive.google.com/file/d/1Hn6XqwYy2JfjCWWs6MR_W6NKMs5VoAEI/view?usp=sharing)
 💻 **Repository:** [github.com/Deepikachintamreddy/AI-DecodeX-Hackathon](https://github.com/Deepikachintamreddy/AI-DecodeX-Hackathon)
 
+> ⚠️ **Note for judges:** This demo runs on Google Gemini's **free tier** with strict daily quotas.
+> If you hit a quota error while uploading real PDFs, please click **"Try with sample data"** —
+> all features (dashboard, study planner, predicted paper, chat coach) work without any API calls.
+> The sample data path showcases the full product capability.
+
 ---
 
 ## ✨ What it does

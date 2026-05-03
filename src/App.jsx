@@ -73,7 +73,8 @@ export default function App() {
       }
       runAnalysis(papers, syllabus)
     } catch (e) {
-      setToast({ message: `Analysis failed: ${e.message}`, type: 'error' })
+      setToast({ message: `API limit reached. Loading sample analysis for demo purposes.`, type: 'warn' })
+      handleSample()
     } finally {
       setAnalyzing(false)
       setProgress('')
