@@ -50,11 +50,22 @@ export default async function handler(req, res) {
       },
     };
 
-    const r = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
+    let r = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     });
+
+    // Auto-retry once on 429 (Rate Limit)
+    if (r.status === 429) {
+      console.log('Quota exceeded, retrying in 2 seconds...');
+      await new Promise((res) => setTimeout(res, 2000));
+      r = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+    }
 
     if (!r.ok) {
       const errText = await r.text();

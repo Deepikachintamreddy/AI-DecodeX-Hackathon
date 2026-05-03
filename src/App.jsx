@@ -7,6 +7,8 @@ import PredictedPaper from './components/PredictedPaper'
 import ChatCoach from './components/ChatCoach'
 import { computeTopicScores, computeSyllabusGaps } from './lib/scoring'
 import { SAMPLE_PAPERS, SAMPLE_SYLLABUS, SAMPLE_CLUSTERS, SAMPLE_PLAN, SAMPLE_PREDICTION } from './lib/sampleData'
+import { generateLocalPlan } from './lib/localPlan'
+import Toast from './components/Toast'
 
 const TABS = [
   { id: 'upload', label: 'Upload', icon: BookOpen },
@@ -27,6 +29,7 @@ export default function App() {
   const [generatingPlan, setGeneratingPlan] = useState(false)
   const [predicted, setPredicted] = useState(null)
   const [generatingPredict, setGeneratingPredict] = useState(false)
+  const [toast, setToast] = useState(null)
 
   // ---- API helper ----
   const callApi = async (task, payload) => {
@@ -150,8 +153,12 @@ export default function App() {
         hoursPerDay: hours,
       })
       setPlan(res)
+      setToast({ message: 'AI Plan generated successfully!', type: 'success' })
     } catch (e) {
-      alert(`Plan generation failed: ${e.message}`)
+      console.warn('API Failed, using local fallback:', e.message)
+      const fallback = generateLocalPlan(analysis.ranked, days, hours)
+      setPlan(fallback)
+      setToast({ message: 'Using local study plan (API busy)', type: 'warn' })
     } finally {
       setGeneratingPlan(false)
     }
@@ -293,6 +300,8 @@ export default function App() {
       <footer className="text-center py-8 text-xs text-gray-600">
         Built for AI DecodeX Hackathon · UnsaidTalks 2026
       </footer>
+
+      {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
     </div>
   )
 }
