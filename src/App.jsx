@@ -73,7 +73,7 @@ export default function App() {
       }
       runAnalysis(papers, syllabus)
     } catch (e) {
-      alert(`Analysis failed: ${e.message}\n\nIf this is a deployment error, make sure GEMINI_API_KEY is set in Vercel env vars.`)
+      setToast({ message: `Analysis failed: ${e.message}`, type: 'error' })
     } finally {
       setAnalyzing(false)
       setProgress('')
@@ -181,7 +181,7 @@ export default function App() {
       })
       setPredicted(res)
     } catch (e) {
-      alert(`Prediction failed: ${e.message}`)
+      setToast({ message: `Prediction failed: ${e.message}`, type: 'error' })
     } finally {
       setGeneratingPredict(false)
     }
@@ -213,9 +213,11 @@ export default function App() {
           subject: analysis.subject
         }
       })
-      return res
+      return res.text
     } catch (e) {
-      throw e
+      console.warn('Chat API failed, using local fallback:', e.message)
+      const top3 = analysis.ranked.slice(0, 3).map(t => t.name).join(', ')
+      return `My AI brain is a bit busy right now, but based on your paper analysis, you should focus heavily on: **${top3}**. These are your highest-yield topics!`
     }
   }
 
