@@ -114,7 +114,7 @@ export default function App() {
 
   // ---- Sample data fast path ----
   const handleSample = () => {
-    console.log("DEBUG: Loading Sample Data Mode...");
+    console.log("DEBUG: Build ID 101 - Loading Sample Data Mode...");
     setSyllabus(SAMPLE_SYLLABUS)
     const { ranked, years } = computeTopicScores(SAMPLE_PAPERS, SAMPLE_CLUSTERS)
     const syllabusTopics = SAMPLE_SYLLABUS
