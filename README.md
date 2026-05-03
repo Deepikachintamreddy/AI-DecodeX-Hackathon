@@ -12,6 +12,8 @@
 
 ## ✨ What it does
 
+![Dashboard Screenshot](./screenshots/dashboard.png)
+
 Most students prep for exams by *re-reading the syllabus* and *flipping through past papers*. They have no structured way to know **what's actually likely to appear**. DecodeX fixes that:
 
 1. **Upload past papers** (PDF or image, multi-year, multi-subject)
@@ -51,6 +53,21 @@ Goes beyond analytics: generates a realistic mock paper for the upcoming exam ba
 ---
 
 ## 🏗️ Architecture
+
+```mermaid
+flowchart LR
+    A[User Uploads PDFs] --> B[React Frontend]
+    B -->|base64| C[/api/gemini/]
+    C --> D[Gemini 2.0 Flash]
+    D -->|extract| E[Topic JSON]
+    D -->|cluster| F[Canonical Topics]
+    E & F --> G[scoring.js]
+    G --> H[Importance Score 0-100]
+    H --> I[Dashboard Charts]
+    H --> J[Study Plan]
+    H --> K[Predicted Paper]
+    H --> L[Coach Chat]
+```
 
 ```
 ┌─────────────────┐      ┌──────────────────┐      ┌─────────────────┐
