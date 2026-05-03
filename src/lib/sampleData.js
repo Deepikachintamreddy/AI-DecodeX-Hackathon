@@ -114,6 +114,38 @@ export const SAMPLE_PLAN = {
       "topics": ["Outer Joins", "Correlated Subqueries"],
       "tasks": ["Write SQL for complex join scenarios (2h)", "Practice nested queries (1h)"],
       "expected_hours": 3
+    },
+    {
+      "day": 4,
+      "date_offset": "Day 4",
+      "focus": "Transactions & ACID Properties",
+      "topics": ["Atomicity", "Isolation Levels"],
+      "tasks": ["Review transaction states (1h)", "Analyze concurrency problems (2h)"],
+      "expected_hours": 3
+    },
+    {
+      "day": 5,
+      "date_offset": "Day 5",
+      "focus": "Indexing & Query Performance",
+      "topics": ["B+ Tree Indexing", "Hash Indexing"],
+      "tasks": ["Draw B+ tree insertion steps (2h)", "Compare indexing strategies (1h)"],
+      "expected_hours": 3
+    },
+    {
+      "day": 6,
+      "date_offset": "Day 6",
+      "focus": "Concurrency Control & Deadlocks",
+      "topics": ["2PL Protocol", "Deadlock Detection"],
+      "tasks": ["Solve wait-for graph problems (2h)", "Review 2-phase locking (1h)"],
+      "expected_hours": 3
+    },
+    {
+      "day": 7,
+      "date_offset": "Day 7",
+      "focus": "Syllabus Gaps & Full Review",
+      "topics": ["Database Security", "Recovery"],
+      "tasks": ["Review least-asked topics (1h)", "Final overview of all units (2h)"],
+      "expected_hours": 3
     }
   ],
   "strategy_note": "Focus heavily on Normalization and SQL Joins as they account for 45% of the total marks in recent years. Save the last day for a full mock paper attempt."

@@ -130,11 +130,14 @@ export default function App() {
 
   // ---- Generate plan ----
   const handleGeneratePlan = async ({ days, hours }) => {
+    setGeneratingPlan(true)
     if (analysis?.subject === 'Database Management Systems') {
-      setPlan(SAMPLE_PLAN)
+      setTimeout(() => {
+        setPlan(SAMPLE_PLAN)
+        setGeneratingPlan(false)
+      }, 800)
       return
     }
-    setGeneratingPlan(true)
     try {
       const res = await callApi('plan', {
         rankedTopics: analysis.ranked.map((t) => ({ name: t.name, score: t.score, freq: t.frequency })),
@@ -151,12 +154,14 @@ export default function App() {
 
   // ---- Predict next paper ----
   const handlePredict = async () => {
-    if (predicted) return
+    setGeneratingPredict(true)
     if (analysis?.subject === 'Database Management Systems') {
-      setPredicted(SAMPLE_PREDICTION)
+      setTimeout(() => {
+        setPredicted(SAMPLE_PREDICTION)
+        setGeneratingPredict(false)
+      }, 800)
       return
     }
-    setGeneratingPredict(true)
     try {
       const res = await callApi('predict', {
         rankedTopics: analysis.ranked.map((t) => ({ name: t.name, score: t.score, avgMarks: t.avgMarks })),
