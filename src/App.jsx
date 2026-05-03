@@ -6,7 +6,7 @@ import StudyPlanner from './components/StudyPlanner'
 import PredictedPaper from './components/PredictedPaper'
 import ChatCoach from './components/ChatCoach'
 import { computeTopicScores, computeSyllabusGaps } from './lib/scoring'
-import { SAMPLE_PAPERS, SAMPLE_SYLLABUS, SAMPLE_CLUSTERS } from './lib/sampleData'
+import { SAMPLE_PAPERS, SAMPLE_SYLLABUS, SAMPLE_CLUSTERS, SAMPLE_PLAN, SAMPLE_PREDICTION } from './lib/sampleData'
 
 const TABS = [
   { id: 'upload', label: 'Upload', icon: BookOpen },
