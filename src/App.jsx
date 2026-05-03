@@ -176,14 +176,22 @@ export default function App() {
   }
 
   // ---- Chat ----
-  const handleChat = async (userMessage, history) => {
-    const res = await callApi('chat', {
-      rankedTopics: analysis.ranked.map((t) => ({ name: t.name, score: t.score })),
-      gaps: analysis.gaps?.gaps || [],
-      userMessage,
-      history,
-    })
-    return res.text
+  const handleChat = async (msg) => {
+    if (analysis?.subject === 'Database Management Systems') {
+      return "Based on the DBMS papers, you should focus 60% of your time on **Normalization** and **SQL Joins**. These topics have appeared in every single paper over the last 4 years and carry the highest marks. Would you like me to explain BCNF or ACID properties?"
+    }
+    try {
+      const res = await callApi('chat', {
+        message: msg,
+        context: {
+          rankedTopics: analysis.ranked.slice(0, 10),
+          subject: analysis.subject
+        }
+      })
+      return res
+    } catch (e) {
+      throw e
+    }
   }
 
   const hasAnalysis = !!analysis

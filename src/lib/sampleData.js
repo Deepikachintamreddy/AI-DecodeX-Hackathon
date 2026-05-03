@@ -146,6 +146,62 @@ export const SAMPLE_PLAN = {
       "topics": ["Database Security", "Recovery"],
       "tasks": ["Review least-asked topics (1h)", "Final overview of all units (2h)"],
       "expected_hours": 3
+    },
+    {
+      "day": 8,
+      "date_offset": "Day 8",
+      "focus": "NoSQL & Modern Databases",
+      "topics": ["NoSQL vs SQL", "CAP Theorem"],
+      "tasks": ["Study document stores (1h)", "Practice NoSQL schema design (2h)"],
+      "expected_hours": 3
+    },
+    {
+      "day": 9,
+      "date_offset": "Day 9",
+      "focus": "Query Optimization",
+      "topics": ["Query Execution Plans", "Optimization Heuristics"],
+      "tasks": ["Analyze query costs (2h)", "Review rule-based optimization (1h)"],
+      "expected_hours": 3
+    },
+    {
+      "day": 10,
+      "date_offset": "Day 10",
+      "focus": "Distributed Databases",
+      "topics": ["Fragmentation", "Replication"],
+      "tasks": ["Review transparency types (1h)", "Study 2PC protocol (2h)"],
+      "expected_hours": 3
+    },
+    {
+      "day": 11,
+      "date_offset": "Day 11",
+      "focus": "Advanced SQL & Programming",
+      "topics": ["Triggers", "Stored Procedures"],
+      "tasks": ["Write complex PL/SQL blocks (2h)", "Review security measures (1h)"],
+      "expected_hours": 3
+    },
+    {
+      "day": 12,
+      "date_offset": "Day 12",
+      "focus": "Mock Paper Attempt #1",
+      "topics": ["Full Syllabus"],
+      "tasks": ["Attempt 2023 Past Paper (3h)"],
+      "expected_hours": 3
+    },
+    {
+      "day": 13,
+      "date_offset": "Day 13",
+      "focus": "Mock Paper Attempt #2",
+      "topics": ["Full Syllabus"],
+      "tasks": ["Attempt 2024 Past Paper (3h)"],
+      "expected_hours": 3
+    },
+    {
+      "day": 14,
+      "date_offset": "Day 14",
+      "focus": "Final Predicted Paper Mock",
+      "topics": ["Full Syllabus"],
+      "tasks": ["Attempt the AI-Predicted Paper (3h)"],
+      "expected_hours": 3
     }
   ],
   "strategy_note": "Focus heavily on Normalization and SQL Joins as they account for 45% of the total marks in recent years. Save the last day for a full mock paper attempt."
@@ -154,29 +210,30 @@ export const SAMPLE_PLAN = {
 export const SAMPLE_PREDICTION = {
   "predicted_paper": {
     "title": "Predicted DBMS End-Sem Paper 2026",
-    "instructions": "Answer all questions. Section A is compulsory. Choose 3 from Section B.",
+    "instructions": "Answer all questions. Section A is compulsory. Sections B and C contain long-form analytical questions.",
     "sections": [
       {
-        "name": "Section A (Compulsory)",
-        "marks_each": 5,
+        "name": "Section A (Compulsory Concepts)",
+        "marks_each": 10,
         "questions": [
-          { "q_no": 1, "text": "Define BCNF. How does it differ from 3NF? Provide an example where a relation is in 3NF but not BCNF.", "topic": "Normalization", "marks": 5 },
-          { "q_no": 2, "text": "Explain the concept of ACID properties in transaction management with a real-world example.", "topic": "Transactions", "marks": 5 }
+          { "q_no": 1, "text": "Define BCNF. How does it differ from 3NF? Provide an example where a relation is in 3NF but not BCNF.", "topic": "Normalization", "marks": 10 },
+          { "q_no": 2, "text": "Explain the concept of ACID properties in transaction management with a real-world example.", "topic": "Transactions", "marks": 10 }
         ]
       },
       {
-        "name": "Section B (Analytical)",
-        "marks_each": 15,
-        "questions": [
-          { "q_no": 3, "text": "Given a relation R(A,B,C,D,E) and FDs {A->BC, CD->E, B->D, E->A}, find the candidate keys and decompose into 3NF.", "topic": "Normalization", "marks": 15 }
-        ]
-      },
-      {
-        "name": "Section C (Numerical & SQL)",
+        "name": "Section B (Design & Analysis)",
         "marks_each": 20,
         "questions": [
-          { "q_no": 4, "text": "Write SQL queries to find the names of employees who have a salary greater than the average salary of their department.", "topic": "SQL Queries", "marks": 20 },
-          { "q_no": 5, "text": "Explain B+ tree indexing. Show the steps for inserting 10, 20, 5, 15, 30 into a B+ tree of order 3.", "topic": "Indexing", "marks": 20 }
+          { "q_no": 3, "text": "Given a relation R(A,B,C,D,E) and FDs {A->BC, CD->E, B->D, E->A}, find the candidate keys and decompose into 3NF.", "topic": "Normalization", "marks": 20 },
+          { "q_no": 4, "text": "Compare and contrast B+ Trees and Hash Indexing. In which scenarios is a B+ Tree preferred?", "topic": "Indexing", "marks": 20 }
+        ]
+      },
+      {
+        "name": "Section C (SQL & Advanced Systems)",
+        "marks_each": 20,
+        "questions": [
+          { "q_no": 5, "text": "Write SQL queries to find the names of employees who have a salary greater than the average salary of their department.", "topic": "SQL Queries", "marks": 20 },
+          { "q_no": 6, "text": "Explain the Two-Phase Locking (2PL) protocol. How does it ensure serializability?", "topic": "Concurrency Control", "marks": 20 }
         ]
       }
     ],
