@@ -133,7 +133,12 @@ export default function App() {
     setGeneratingPlan(true)
     if (analysis?.subject === 'Database Management Systems') {
       setTimeout(() => {
-        setPlan(SAMPLE_PLAN)
+        // Slice the plan to match the number of days the user requested
+        const limitedPlan = {
+          ...SAMPLE_PLAN,
+          plan: SAMPLE_PLAN.plan.slice(0, days)
+        }
+        setPlan(limitedPlan)
         setGeneratingPlan(false)
       }, 800)
       return
