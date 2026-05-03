@@ -47,7 +47,6 @@ export default async function handler(req, res) {
       contents: [{ role: 'user', parts }],
       generationConfig: {
         temperature: task === 'chat' ? 0.7 : 0.2,
-        responseMimeType: task === 'chat' ? 'text/plain' : 'application/json',
       },
     };
 
