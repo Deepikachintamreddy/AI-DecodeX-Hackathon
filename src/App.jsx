@@ -183,7 +183,20 @@ export default function App() {
   // ---- Chat ----
   const handleChat = async (msg) => {
     if (analysis?.subject === 'Database Management Systems') {
-      return "Based on the DBMS papers, you should focus 60% of your time on **Normalization** and **SQL Joins**. These topics have appeared in every single paper over the last 4 years and carry the highest marks. Would you like me to explain BCNF or ACID properties?"
+      const low = msg.toLowerCase();
+      if (low.includes('normalization') || low.includes('bcnf')) {
+        return "Normalization (1NF, 2NF, 3NF, BCNF) is the most repeated topic. You should study **BCNF** decomposition specifically, as it appeared in the 2023 and 2024 papers for 15 marks each.";
+      }
+      if (low.includes('acid') || low.includes('transaction')) {
+        return "ACID properties (Atomicity, Consistency, Isolation, Durability) are a core concept. **Isolation levels** and **2-Phase Locking (2PL)** are high-probability topics for the upcoming exam.";
+      }
+      if (low.includes('sql') || low.includes('query')) {
+        return "SQL queries on **Joins** and **Nested Subqueries** carry about 20-30% of the weightage. Make sure you practice writing queries for 'Top-N' and 'Group By' scenarios.";
+      }
+      if (low.includes('index') || low.includes('tree')) {
+        return "B+ Tree Indexing is preferred over Hashing because it supports range queries. Expect a 10-15 mark question on **B+ Tree insertion** steps.";
+      }
+      return "Based on your DBMS analysis, you're doing well! I recommend focusing on **Normalization** and **SQL Joins** tonight as they are the highest-yield topics. What specific topic should we dive into?";
     }
     try {
       const res = await callApi('chat', {
