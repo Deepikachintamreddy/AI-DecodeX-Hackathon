@@ -129,6 +129,10 @@ export default function App() {
 
   // ---- Generate plan ----
   const handleGeneratePlan = async ({ days, hours }) => {
+    if (analysis?.subject === 'Database Management Systems') {
+      setPlan(SAMPLE_PLAN)
+      return
+    }
     setGeneratingPlan(true)
     try {
       const res = await callApi('plan', {
@@ -146,6 +150,11 @@ export default function App() {
 
   // ---- Predict next paper ----
   const handlePredict = async () => {
+    if (predicted) return
+    if (analysis?.subject === 'Database Management Systems') {
+      setPredicted(SAMPLE_PREDICTION)
+      return
+    }
     setGeneratingPredict(true)
     try {
       const res = await callApi('predict', {
