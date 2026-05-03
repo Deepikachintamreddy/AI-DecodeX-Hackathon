@@ -88,3 +88,60 @@ export const SAMPLE_CLUSTERS = [
   { canonical: 'Database Recovery', members: ['Database Recovery'] },
   { canonical: 'NoSQL Databases', members: ['NoSQL Databases'] },
 ];
+
+export const SAMPLE_PLAN = {
+  "plan": [
+    {
+      "day": 1,
+      "date_offset": "Day 1",
+      "focus": "Database Normalization Fundamentals",
+      "topics": ["1NF, 2NF, 3NF", "Functional Dependencies"],
+      "tasks": ["Review normal forms (1h)", "Practice 10 normalization problems (2h)"],
+      "expected_hours": 3
+    },
+    {
+      "day": 2,
+      "date_offset": "Day 2",
+      "focus": "Advanced Normalization & BCNF",
+      "topics": ["BCNF", "4NF & 5NF overview"],
+      "tasks": ["Solve BCNF decomposition cases (2h)", "Summary of higher normal forms (1h)"],
+      "expected_hours": 3
+    },
+    {
+      "day": 3,
+      "date_offset": "Day 3",
+      "focus": "SQL Mastery - Joins & Subqueries",
+      "topics": ["Outer Joins", "Correlated Subqueries"],
+      "tasks": ["Write SQL for complex join scenarios (2h)", "Practice nested queries (1h)"],
+      "expected_hours": 3
+    }
+  ],
+  "strategy_note": "Focus heavily on Normalization and SQL Joins as they account for 45% of the total marks in recent years. Save the last day for a full mock paper attempt."
+}
+
+export const SAMPLE_PREDICTION = {
+  "predicted_paper": {
+    "title": "Predicted DBMS End-Sem Paper 2026",
+    "instructions": "Answer all questions. Section A is compulsory. Choose 3 from Section B.",
+    "sections": [
+      {
+        "name": "Section A (Compulsory)",
+        "marks_each": 5,
+        "questions": [
+          { "q_no": 1, "text": "Define BCNF. How does it differ from 3NF? Provide an example where a relation is in 3NF but not BCNF.", "topic": "Normalization", "marks": 5 },
+          { "q_no": 2, "text": "Explain the concept of ACID properties in transaction management with a real-world example.", "topic": "Transactions", "marks": 5 }
+        ]
+      },
+      {
+        "name": "Section B (Analytical)",
+        "marks_each": 15,
+        "questions": [
+          { "q_no": 3, "text": "Given a relation R(A,B,C,D,E) and FDs {A->BC, CD->E, B->D, E->A}, find the candidate keys and decompose into 3NF.", "topic": "Normalization", "marks": 15 },
+          { "q_no": 4, "text": "Compare and contrast B+ Trees and Hash Indexing. In which scenarios is a B+ Tree preferred?", "topic": "Indexing", "marks": 15 }
+        ]
+      }
+    ],
+    "total_marks": 100,
+    "rationale": "Normalization and SQL remain the highest-yield topics. We expect a heavy focus on BCNF and Indexing structure in this cycle based on the 3-year rising trend."
+  }
+}
