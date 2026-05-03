@@ -5,7 +5,7 @@
 **Submission for AI DecodeX Hackathon by UnsaidTalks (May 2026).**
 
 🌐 **Live Demo:** [https://ai-decode-x-hackathon.vercel.app](https://ai-decode-x-hackathon.vercel.app)
-🎬 **Demo Video:** [Watch on Google Drive](https://drive.google.com/file/d/1En_OXnPSvpffH306mljD93uJ3g0tEKk_/view?usp=sharing)
+🎬 **Demo Video:** [Watch on Google Drive](https://drive.google.com/file/d/1Hn6XqwYy2JfjCWWs6MR_W6NKMs5VoAEI/view?usp=sharing)
 💻 **Repository:** [github.com/Deepikachintamreddy/AI-DecodeX-Hackathon](https://github.com/Deepikachintamreddy/AI-DecodeX-Hackathon)
 
 ---
