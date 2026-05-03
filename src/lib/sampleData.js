@@ -168,8 +168,15 @@ export const SAMPLE_PREDICTION = {
         "name": "Section B (Analytical)",
         "marks_each": 15,
         "questions": [
-          { "q_no": 3, "text": "Given a relation R(A,B,C,D,E) and FDs {A->BC, CD->E, B->D, E->A}, find the candidate keys and decompose into 3NF.", "topic": "Normalization", "marks": 15 },
-          { "q_no": 4, "text": "Compare and contrast B+ Trees and Hash Indexing. In which scenarios is a B+ Tree preferred?", "topic": "Indexing", "marks": 15 }
+          { "q_no": 3, "text": "Given a relation R(A,B,C,D,E) and FDs {A->BC, CD->E, B->D, E->A}, find the candidate keys and decompose into 3NF.", "topic": "Normalization", "marks": 15 }
+        ]
+      },
+      {
+        "name": "Section C (Numerical & SQL)",
+        "marks_each": 20,
+        "questions": [
+          { "q_no": 4, "text": "Write SQL queries to find the names of employees who have a salary greater than the average salary of their department.", "topic": "SQL Queries", "marks": 20 },
+          { "q_no": 5, "text": "Explain B+ tree indexing. Show the steps for inserting 10, 20, 5, 15, 30 into a B+ tree of order 3.", "topic": "Indexing", "marks": 20 }
         ]
       }
     ],

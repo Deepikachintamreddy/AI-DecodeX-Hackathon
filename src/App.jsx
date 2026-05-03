@@ -123,8 +123,8 @@ export default function App() {
       .filter((s) => s.length > 2)
     const gaps = computeSyllabusGaps(syllabusTopics, ranked)
     setAnalysis({ ranked, years, gaps, papers: SAMPLE_PAPERS, subject: 'Database Management Systems' })
-    setPlan(SAMPLE_PLAN)
-    setPredicted(SAMPLE_PREDICTION)
+    setPlan(null)
+    setPredicted(null)
     setTab('dashboard')
   }
 
